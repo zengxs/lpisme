@@ -41,11 +41,6 @@
 	<script src="<?php $this->options->themeUrl('js/prism.js'); ?>" data-no-instant></script>
 	<script src="//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js" data-no-instant></script>
 	<script src="//cdn.bootcss.com/instantclick/3.0.1/instantclick.min.js" data-no-instant></script>
-	<?php if($this->options->GoogleAnalytics): ?>
-	<script>
-	<?php $this->options->GoogleAnalytics(); ?>
-	</script>
-	<?php endif; ?>
 	<script data-no-instant>
 	InstantClick.on('change', function(isInitialLoad) {
 		if (isInitialLoad === false) {
@@ -62,6 +57,12 @@
 	<script src="//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js"></script>
 	<script src="<?php $this->options->themeUrl('js/prism.js'); ?>" ></script>
 	<?php endif; ?>
+
+	<?php
+	if($this->options->GoogleAnalytics):
+		$this->options->GoogleAnalytics();
+	endif;
+	?>
 
 	</body>
 </html>
