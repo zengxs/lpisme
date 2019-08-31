@@ -20,8 +20,12 @@ function themeConfig($form) {
 	array('Pjax' => _t('启用Pjax加速站点,勾上即可，为使原生评论生效需要到设置-评论，去掉开启垃圾评论过滤，主题已内置相关js'),),array('ShowSearch'), _t('设置开启Pjax'));
 	$form->addInput($search_form->multiMode());
 
-    //谷歌Analytics代码
-    $GoogleAnalytics = new Typecho_Widget_Helper_Form_Element_Textarea('GoogleAnalytics', NULL, NULL, _t('Google Analytics代码'), _t('填写你从Google Analytics获取到的Universal Analytics跟踪代码，不需要script标签'));
+    // 自定义 Meta
+    $CustomMetas = new Typecho_Widget_Helper_Form_Element_Textarea('CustomMetas', NULL, NULL, _t('自定义 meta 标签'), _t('设置你的自定义 meta 标签 (或其他自定义 head 内容)'));
+    $form->addInput($CustomMetas);
+
+    // 谷歌Analytics代码
+    $GoogleAnalytics = new Typecho_Widget_Helper_Form_Element_Textarea('GoogleAnalytics', NULL, NULL, _t('Google Analytics代码'), _t('填写你从Google Analytics获取到的Universal Analytics跟踪代码，需要script标签'));
     $form->addInput($GoogleAnalytics);
 
 	//社交链接

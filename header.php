@@ -21,6 +21,12 @@
 'author'    =>  _t(' %s ')
 ), '', ' - '); ?><?php $this->options->title(); ?></title>
 <meta name="keywords" content="<?php $this->keywords() ?>" />
+<?php
+    // 加入自定义 meta
+    if($this->options->CustomMetas):
+        $this->options->CustomMetas();
+    endif;
+?>
 <?php $this->header('keywords=&generator=&template=&pingback=&xmlrpc=&wlw=&commentReply=&rss1=&rss2=&atom='); ?>
 <link rel="shortcut icon" href="<?php if($this->options->favicon): $this->options->favicon(); else: $this->options->themeUrl('images/favicon.png');endif; ?>">
 <link rel="apple-touch-icon" href="<?php if($this->options->iosicon): $this->options->iosicon(); else: $this->options->themeUrl('images/favicon.png');endif; ?>">
